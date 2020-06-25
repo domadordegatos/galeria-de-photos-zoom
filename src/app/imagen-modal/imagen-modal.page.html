@@ -1,0 +1,39 @@
+<ion-header mode="ios">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start" (click)="back()">
+        <ion-icon slot="start" name="caret-back-circle"></ion-icon>
+    </ion-buttons>
+    <ion-title>imagenModal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <div class="ion-text-center" style="margin-top: 1rem;">
+
+      <ion-button (click)="back()" color="danger">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="zoom(true)" color="danger">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="zoom(false)" color="danger">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+      </ion-button>
+
+  </div>
+
+    <ion-slides mode="ios" [options]="options" #slides>
+      <ion-slide *ngFor="let item of imagenes">
+        <ion-card class="ion-text-center">
+          <div class="swiper-zoom-container">
+            <img [src]="item" [alt]="item">
+          </div>
+          <div class="ion-margin">
+                    
+          </div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+</ion-content>
